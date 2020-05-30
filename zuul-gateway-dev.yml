@@ -1,0 +1,12 @@
+### 路由规则
+zuul:
+  routes: ### 定义服务转发规则
+    item-service: ### 名字任取
+      path: /item-service/** ### 配置请求的访问规则
+      ### url: http://127.0.0.1:8081 ### 真正的微服务地址，path匹配的请求全部转发到该url。
+      ### 但是该配置方式不会作为Hystrix Command 执行，也不会使用Ribbon负载均衡
+      service-id: item-center ### 对应eureka中的服务名称，面向服务配置，不破坏Zuul的Hystrix、Ribbon特性
+      
+    order-service:
+      path: /order-service/** ### 配置请求的访问规则
+      service-id: order-center
