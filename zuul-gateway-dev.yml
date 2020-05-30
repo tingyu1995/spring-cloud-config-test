@@ -8,5 +8,5 @@ zuul:
       service-id: item-center ### 对应eureka中的服务名称，面向服务配置，不破坏Zuul的Hystrix、Ribbon特性
       
     order-service:
-      path: /order-service/** ### 配置请求的访问规则
+      path: /order-service2/** ### 配置请求的访问规则
       service-id: order-center
